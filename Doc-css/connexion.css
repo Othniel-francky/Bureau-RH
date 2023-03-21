@@ -126,5 +126,9 @@ button{
     font-weight: bold;
     color: white;
     border: none;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: 50px;
 }

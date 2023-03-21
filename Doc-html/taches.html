@@ -20,10 +20,14 @@
             <li><i class="fa-solid fa-chart-pie"></i><a href="./personnel.html">Tableau</a></li>
              <li><i class="fa-solid fa-chart-pie"></i><a href="./personnel.html">Personnel</a></li>
               <li><i class="fa-solid fa-chart-pie"></i><a href="./taches.html">Taches</a></li>
-               <li><i class="fa-solid fa-chart-pie"></i><a href="#">Tableau</a></li>
-                <li><i class="fa-solid fa-chart-pie"></i><a href="#">Tableau</a></li>
+               <li><i class="fa-solid fa-chart-pie"></i><a href="#">Taches Affectés</a></li>
+                <li><i class="fa-solid fa-chart-pie"></i><a href="#">Bilan</a></li>
                  <li><i class="fa-solid fa-chart-pie"></i><a href="#">Tableau</a></li>
         </div>
+        <div class="barre"></div>
+        <div class="text"><p>PARAMETRES</p></div>
+        <div class="barre1"></div>
+        <div class="text"><p>DECONNEXION</p></div>
     </section>
 
     <section id="interface">
@@ -44,39 +48,66 @@
 
         <h3 class="i-name">Taches</h3>
         <div class="distingue">
-            <button>AJOUTER TACHES</button>
+            <button id="ajout">AJOUTER TACHES</button>
             <button>AFFECTES TACHES</button>
         </div> 
-        <div class="table-section">
+
+        <div class="tablesection">
             <table class="table">
                <thead>
                    
-                   <th>Nom/Prenoms</th>
-                   <th>Matricule</th>
-                   <th>Genre</th>
+                   <th>Taches</th>
+                   <th>Priorités</th>
+                   <th>Pourcentage</th>
+                   <th>Axe d'Amelioration</th>
+                   <th>Types de Taches</th>
+                   <th>Type de Paiement</th>
                    <th>Action</th>
                </thead>
                <tr>
-                   <td>1</td>
-                   <td>Kouame Franck</td>
-                   <td>Mj0054</td>
-                   <td>M</td>
-                   <td>07-89-10-57-91</td>
-                   <td>
-                     <button><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
-                       <button><i class="fa fa-trash" aria-hidden="true"></i></button>
-                   </td>
+                   <td>Cultivateur</td>
+                   <td>Normal</td>
+                   <td>50%</td>
+                   <td>Augmenter le pourcentage a 70% <br> du temps de travail </td>
+                   <td>Taches Principales</td>
+                   <td>1h/25.000 Frs</td>
+                   <td></td>
                </tr>
-               <tr>
-                 <td>1</td>
-                 <td>Kouame Franck</td>
-                 <td>Mj0054</td>
-                 <td>M</td>
 
-                   <button><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
-                     <button><i class="fa fa-trash" aria-hidden="true"></i></button>
-                 </td>
-             </tr>
+               <div id="contactModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="form-container">
+                    <form method="post">
+                      <label for="name">Taches:</label>
+                      <input class="form-control" required type="text" id="name" name="name">
+
+                      <label for="email">Priorités:</label>
+                      <input class="form-control" required type="text" id="name" name="name">
+
+                      <label for="telephone">Pourcentage:</label>
+                      <input class="form-control" required type="number" id="Pourcentage" name="Pourcentage">
+
+                      <label for="telephone">Axe d'Amelioration:</label>
+                      <input class="form-control" required type="text" id="name" name="name">
+
+                      <label for="telephone">Types de Taches:</label>
+                      <input class="form-control" required type="text" id="name" name="name">
+
+                      <label for="telephone">Type de Paiement:</label>
+                      <input class="form-control" required type="number" id="number" name="number">
+
+                      
+
+                      <button type="button" class="addContactButton">Ajouter </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+             
     </section>
+    <script src="../Doc-js/taches.js"></script>
 </body>
 </html>

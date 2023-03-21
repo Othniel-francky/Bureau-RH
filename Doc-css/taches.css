@@ -70,6 +70,21 @@ body{
     transition: 0.3 ease;
 }
 
+#menu .barre{
+   margin-top: 200px;
+    width: 230px;
+    border: 3px solid white;
+}
+
+#menu .barre1{
+    width: 230px;
+    border: 1px solid white;
+}
+
+.text p{
+    font-size: 15px;
+}
+
 #interface{
     width: calc(100%-300px);
 }
@@ -140,3 +155,93 @@ body{
 #interface .distingue{
     margin-top: 20px;
 }
+
+.table-section{
+    height: 650px;
+    overflow: auto;
+  }
+
+  table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 1000px;
+    border-collapse: collapse;
+  }
+
+  thead th{
+    position: sticky;
+    top: 0;
+    background-color: green;
+    color: #1d1801;
+    font-size: 18px;
+    height: 50px;
+
+  }
+
+  th,td{
+    border-bottom: 1px solid black;
+    padding: 20px 30px;
+    word-break: break-all;
+    text-align: center;
+ }
+
+ tr:hover td{
+    color: #0298cf;
+    cursor: pointer;
+    background-color: #f6f9fc;
+ }
+
+ .distingue button{
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+ }
+
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
