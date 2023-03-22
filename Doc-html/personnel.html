@@ -45,7 +45,7 @@
         <h3 class="i-name">Tableau</h3>
 
        
-
+        <button id="ajout">AJOUTER DU PERSONNEL</button>
         
         <div class="table-section">
             <table class="table">
@@ -118,6 +118,42 @@
          </tr>
             </table>
            </div>
+
+           <div id="contactModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="form-container">
+                <form method="post">
+                  <label for="name">Taches:</label>
+                  <input class="form-control" required type="text" id="name" name="name">
+
+                  <label for="email">Priorités:</label>
+                  <input class="form-control" required type="text" id="name" name="name">
+
+                  <label for="telephone">Pourcentage:</label>
+                  <input class="form-control" required type="number" id="Pourcentage" name="Pourcentage">
+
+                  <label for="telephone">Axe d'Amelioration:</label>
+                  <input class="form-control" required type="text" id="name" name="name">
+
+                  <label for="telephone">Types de Taches:</label>
+                  <input class="form-control" required type="text" id="name" name="name">
+
+                  <label for="telephone">Type de Paiement:</label>
+                  <input class="form-control" required type="number" id="number" name="number">
+
+                  
+
+                  <button type="button" class="addContactButton">Ajouter </button>
+                </form>
+              </div>
+            </div>
+          </div>
+         
     </section>
+
+    <script src="../Doc-js/personnel.js"></script>
 </body>
 </html>
