@@ -55,7 +55,7 @@
         <div class="tablesection">
             <table class="table">
                <thead>
-                   
+                <th>ID</th>
                    <th>Taches</th>
                    <th>Priorités</th>
                    <th>Pourcentage</th>
@@ -64,15 +64,8 @@
                    <th>Type de Paiement</th>
                    <th>Action</th>
                </thead>
-               <tr>
-                   <td>Cultivateur</td>
-                   <td>Normal</td>
-                   <td>50%</td>
-                   <td>Augmenter le pourcentage a 70% <br> du temps de travail </td>
-                   <td>Taches Principales</td>
-                   <td>1h/25.000 Frs</td>
-                   <td></td>
-               </tr>
+               <tbody id="tcorps"></tbody>
+               
 
                <div id="contactModal" class="modal">
 
@@ -82,26 +75,18 @@
                   <div class="form-container">
                     <form method="post">
                       <label for="name">Taches:</label>
-                      <input class="form-control" required type="text" id="name" name="name">
-
+                      <input class="form-control" type="text" id="Taches">
                       <label for="email">Priorités:</label>
-                      <input class="form-control" required type="text" id="name" name="name">
-
+                      <input class="form-control" type="text" id="Priorites">
                       <label for="telephone">Pourcentage:</label>
-                      <input class="form-control" required type="number" id="Pourcentage" name="Pourcentage">
-
+                      <input class="form-control" type="number" id="Pourcentage">
                       <label for="telephone">Axe d'Amelioration:</label>
-                      <input class="form-control" required type="text" id="name" name="name">
-
+                      <input class="form-control" type="text" id="Axe">
                       <label for="telephone">Types de Taches:</label>
-                      <input class="form-control" required type="text" id="name" name="name">
-
+                      <input class="form-control" type="text" id="categorie">
                       <label for="telephone">Type de Paiement:</label>
-                      <input class="form-control" required type="number" id="number" name="number">
-
-                      
-
-                      <button type="button" class="addContactButton">Ajouter </button>
+                      <input class="form-control" type="number" id="Paiement">
+                      <button type="button" class="addContactButton" id="ajouter">Ajouter </button>
                     </form>
                   </div>
                 </div>
@@ -111,3 +96,4 @@
     <script src="../Doc-js/taches.js"></script>
 </body>
 </html>
+

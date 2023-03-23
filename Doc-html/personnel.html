@@ -48,7 +48,7 @@
         <button id="ajout">AJOUTER DU PERSONNEL</button>
         
         <div class="table-section">
-            <table class="table">
+            <table class="table" id="ajtTable">
                <thead>
                    <th>N.</th>
                    <th>Nom/Prenoms</th>
@@ -60,62 +60,7 @@
                    <th>Adresse</th>
                    <th>Action</th>
                </thead>
-               <tr>
-                   <td>1</td>
-                   <td>Kouame Franck</td>
-                   <td>Mj0054</td>
-                   <td>M</td>
-                   <td>07-89-10-57-91</td>
-                   <td>azerty@.com</td>
-                   <td>15/03/2022</td>
-                   <td>Gonzaqueville</td>
-                   <td>
-                     <button><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
-                       <button><i class="fa fa-trash" aria-hidden="true"></i></button>
-                   </td>
-               </tr>
-               <tr>
-                 <td>1</td>
-                 <td>Kouame Franck</td>
-                 <td>Mj0054</td>
-                 <td>M</td>
-                 <td>07-89-10-57-91</td>
-                 <td>azerty@.com</td>
-                 <td>15/03/2022</td>
-                 <td>Gonzaqueville</td>
-                 <td>
-                   <button><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
-                     <button><i class="fa fa-trash" aria-hidden="true"></i></button>
-                 </td>
-             </tr>
-             <tr>
-               <td>1</td>
-               <td>Kouame Franck</td>
-               <td>Mj0054</td>
-               <td>M</td>
-               <td>07-89-10-57-91</td>
-               <td>azerty@.com</td>
-               <td>15/03/2022</td>
-               <td>Gonzaqueville</td>
-               <td>
-                 <button><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
-                   <button><i class="fa fa-trash" aria-hidden="true"></i></button>
-               </td>
-           </tr>
-           <tr>
-             <td>1</td>
-             <td>Kouame Franck</td>
-             <td>Mj0054</td>
-             <td>M</td>
-             <td>07-89-10-57-91</td>
-             <td>azerty@.com</td>
-             <td>15/03/2022</td>
-             <td>Gonzaqueville</td>
-             <td>
-               <button><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
-                 <button><i class="fa fa-trash" aria-hidden="true"></i></button>
-             </td>
-         </tr>
+               <tbody></tbody>
             </table>
            </div>
 
@@ -126,23 +71,32 @@
               <span class="close">&times;</span>
               <div class="form-container">
                 <form method="post">
-                  <label for="name">Taches:</label>
+                  <label for="num">N°:</label>
+                  <input class="form-control" required type="number" id="num" name="name">
+
+                  <label for="name">Nom/Prenoms:</label>
                   <input class="form-control" required type="text" id="name" name="name">
 
-                  <label for="email">Priorités:</label>
-                  <input class="form-control" required type="text" id="name" name="name">
+                  <label for="Matricule">Matricule:</label>
+                  <input class="form-control" required type="text" id="Matricule" name="Pourcentage">
 
-                  <label for="telephone">Pourcentage:</label>
-                  <input class="form-control" required type="number" id="Pourcentage" name="Pourcentage">
+                  <label for="Genre">Genre:</label>
+                  <input class="form-control" required type="text" id="Genre" name="name">
 
-                  <label for="telephone">Axe d'Amelioration:</label>
-                  <input class="form-control" required type="text" id="name" name="name">
+                  <label for="Mobile">Mobile:</label>
+                  <input class="form-control" required type="text" id="Mobile" name="name">
 
-                  <label for="telephone">Types de Taches:</label>
-                  <input class="form-control" required type="text" id="name" name="name">
+                  <label for="Email">Email:</label>
+                  <input class="form-control" required type="text" id="Email" name="number">
 
-                  <label for="telephone">Type de Paiement:</label>
-                  <input class="form-control" required type="number" id="number" name="number">
+                  <label for="Date">Date d'insertion:</label>
+                  <input class="form-control" required type="date" id="Date" name="number">
+
+                  <label for="Adresse">Adresse:</label>
+                  <input class="form-control" required type="text" id="Adresse" name="number">
+
+                  <label for="Action">Action:</label>
+                  <input class="form-control" required type="text" id="Action" name="number">
 
                   
 
