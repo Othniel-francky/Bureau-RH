@@ -44,7 +44,7 @@ function save() {
                             categorie.value =  "";
                             Paiement.value =  "";
 
-                            document.getElementById("contactModal").style.display = "none";
+                            
 
 
                             if (!localStorage.getItem('Taches')){
@@ -80,7 +80,8 @@ function save() {
 const tcorps = document.getElementById("tcorps");
 const mesTaches = localStorage.getItem("Taches");
 if(mesTaches){
-    JSON.parse(mesTaches).forEach(element => {
+    const parsed = JSON.parse(mesTaches)
+parsed.forEach(element => {
         const tr = document.createElement("tr");
         tr.id = `ligne-${element.id}`;
         tcorps.append(tr);
@@ -129,8 +130,17 @@ if(mesTaches){
         mbotton.id = "modifier-"+element.id;
         mbotton.textContent = "Modifier";
         colbotton.append(mbotton);
+        
 
+        
         const sbotton = document.createElement("button");
+        sbotton.addEventListener("click", (e) => {
+          console.log("click");
+          const f = parsed.filter((el) => el.id !== element.id);
+          console.log("f", f);
+          localStorage.setItem("Taches", JSON.stringify(f));
+          window.location.reload();
+        });
         sbotton.id = "supprimer-"+element.id;
         sbotton.textContent = "Supprimer";
         colbotton.append(sbotton);
@@ -139,5 +149,3 @@ if(mesTaches){
     });
     
 }
-
-
