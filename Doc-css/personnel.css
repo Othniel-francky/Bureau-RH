@@ -9,7 +9,7 @@ body{
 }
 
 #menu{
-    background: #111827;
+    background: #363636;
     width: 240px;
     height: 100vh;
     
@@ -37,6 +37,7 @@ body{
     list-style: none;
     padding: 15px 0;
     transition: 0.3 ease;
+    font-size: 20px;
 }
 
 #menu .item li:hover{
@@ -54,8 +55,9 @@ body{
     height: 30px;
     line-height: 30px;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     margin: 0 10 0 25px;
+    
 }
 
 #menu .item li:hover i,
@@ -72,6 +74,7 @@ body{
 
 #interface{
     width: calc(100%-300px);
+   background: whitesmoke;
 }
 
 #interface .navigation{
@@ -80,8 +83,8 @@ body{
     justify-content: space-between;
     background: white;
     padding: 15px 30px;
-    border-bottom: 3px solid #594ef7;
-    
+    border-bottom: 3px solid #008001;
+    background: #363636;
     width: 100%;
 }
 
@@ -131,9 +134,9 @@ body{
 }
 
 .i-name{
-    color: white;
+    color: black;
     padding: 30px 30px 0 30px;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 700;
 }
 
@@ -230,5 +233,8 @@ body{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    height: 50px;
   }
+
+  
   

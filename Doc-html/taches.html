@@ -1,97 +1,144 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../Doc-css/taches.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="../Doc-css/taches.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <section id="menu">
-        <div class="logo">
-            <img src="../Doc-image/main-verte (3).jpeg" alt="">
-            <h1>RH <span>PLUS</span> </h1>
-        </div>
+      <div class="logo">
+        <img src="../Doc-image/main-verte (3).jpeg" alt="" />
+        <h1>RH <span>PLUS</span></h1>
+      </div>
 
-        <div class="item">
-            <li><i class="fa-solid fa-chart-pie"></i><a href="./personnel.html">Tableau</a></li>
-             <li><i class="fa-solid fa-chart-pie"></i><a href="./personnel.html">Personnel</a></li>
-              <li><i class="fa-solid fa-chart-pie"></i><a href="./taches.html">Taches</a></li>
-               <li><i class="fa-solid fa-chart-pie"></i><a href="#">Taches Affectés</a></li>
-                <li><i class="fa-solid fa-chart-pie"></i><a href="#">Bilan</a></li>
-                 <li><i class="fa-solid fa-chart-pie"></i><a href="#">Tableau</a></li>
-        </div>
-        <div class="barre"></div>
-        <div class="text"><p>PARAMETRES</p></div>
-        <div class="barre1"></div>
-        <div class="text"><p>DECONNEXION</p></div>
+      <div class="item">
+        <li>
+          <i class="fa-solid fa-chart-pie"></i
+          ><a href="./dashboard.html">Tableau</a>
+        </li>
+        <li>
+          <i class="fa fa-users" aria-hidden="true"></i
+          ><a href="./personnel.html">Personnel</a>
+        </li>
+        <li>
+          <i class="fa fa-tachometer" aria-hidden="true"></i
+          ><a href="#">Taches</a>
+        </li>
+        <li>
+          <i class="fa fa-question-circle" aria-hidden="true"></i
+          ><a href="#">Taches Affectés</a>
+        </li>
+        <li>
+          <i class="fa fa-file-text" aria-hidden="true"></i
+          ><a href="#">Bilan</a>
+        </li>
+        <li><i class="fa-solid fa-chart-pie"></i><a href="#">Tableau</a></li>
+      </div>
+      <div class="barre"></div>
+      <div class="text"><p>PARAMETRES</p></div>
+      <div class="barre1"></div>
+      <div class="text"><p>DECONNEXION</p></div>
     </section>
 
     <section id="interface">
-
-        <div class="navigation">
-            <div class="n1">
-                <div class="search">
-                    <i class="far fa-search"></i>
-                    <input type="text" placeholder="search">
-
-                </div>
-            </div>
-            <div class="profil">
-                <i class="far fa-bell"></i>
-                <img src="../Doc-image/phto-profil (1).jpg" alt="">
-            </div>
+      <div class="navigation">
+        <div class="n1">
+          <div class="search">
+            <i class="far fa-search"></i>
+            <input type="text" placeholder="search" />
+          </div>
         </div>
+        <div class="profil">
+          <i class="far fa-bell"></i>
+          <img src="../Doc-image/phto-profil (1).jpg" alt="" />
+        </div>
+      </div>
 
-        <h3 class="i-name">Taches</h3>
-        <div class="distingue">
-            <button id="ajout">AJOUTER TACHES</button>
-            <button>AFFECTES TACHES</button>
-        </div> 
+      <h3 class="i-name">Taches</h3>
+      <div class="distingue">
+        <button id="ajout">AJOUTER TACHES</button>
+        <button id="affecte">AFFECTES TACHES</button>
+      </div>
 
-        <div class="tablesection">
-            <table class="table">
-               <thead>
-                <th>ID</th>
-                   <th>Taches</th>
-                   <th>Priorités</th>
-                   <th>Pourcentage</th>
-                   <th>Axe d'Amelioration</th>
-                   <th>Types de Taches</th>
-                   <th>Type de Paiement</th>
-                   <th>Action</th>
-               </thead>
-               <tbody id="tcorps"></tbody>
-               
+      <div class="tablesection">
+        <table class="table">
+          <thead>
+            <th>ID</th>
+            <th>Taches</th>
+            <th>Priorités</th>
+            <th>Pourcentage</th>
+            <th>Axe d'Amelioration</th>
+            <th>Types de Taches</th>
+            <th>Type de Paiement</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="tcorps"></tbody>
+        </table>
+      </div>
 
-               <div id="contactModal" class="modal">
-r
-                  <span class="close">&times;</span>
-                  <div class="form-container">
-                    <form method="post">
-                      <label for="name">Taches:</label>
-                      <input class="form-control" type="text" id="Taches">
-                      <label for="email">Priorités:</label>
-                      <input class="form-control" type="text" id="Priorites">
-                      <label for="telephone">Pourcentage:</label>
-                      <input class="form-control" type="number" id="Pourcentage">
-                      <label for="telephone">Axe d'Amelioration:</label>
-                      <input class="form-control" type="text" id="Axe">
-                      <label for="telephone">Types de Taches:</label>
-                      <input class="form-control" type="text" id="categorie">
-                      <label for="telephone">Type de Paiement:</label>
-                      <input class="form-control" type="number" id="Paiement">
-                      <button type="button" class="addContactButton" id="ajouter">Ajouter </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-             
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="form-container">
+            <form method="post">
+              <label for="name">Taches:</label>
+              <input class="form-control" type="text" id="Taches" />
+              <label for="email">Priorités:</label>
+              <input class="form-control" type="text" id="Priorites" />
+              <label for="telephone">Pourcentage:</label>
+              <input class="form-control" type="number" id="Pourcentage" />
+              <label for="telephone">Axe d'Amelioration:</label>
+              <input class="form-control" type="text" id="Axe" />
+              <label for="telephone">Types de Taches:</label>
+              <input class="form-control" type="text" id="categorie" />
+              <label for="telephone">Type de Paiement:</label>
+              <input class="form-control" type="number" id="Paiement" />
+              <button type="button" class="addContactButton" id="ajouter">
+                Ajouter
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="contactezModal1" class="modal1">
+        <div class="modal-content1">
+          <h1>AFFECTATION DE TACHES</h1>
+          <span class="close1">&times;</span>
+          <div class="form-container1">
+            <form method="post1">
+              <label for="name1">Taches:</label>
+              <input class="form-control1" type="text1" id="Taches1" />
+              <label for="email1">Priorités:</label>
+              <input class="form-control1" type="text1" id="Priorites1" />
+              <label for="telephone1">Pourcentage:</label>
+              <input class="form-control1" type="number" id="Pourcentage1" />
+              <label for="telephone1">Axe d'Amelioration:</label>
+              <input class="form-contro1" type="text" id="Axe1" />
+              <label for="telephone1">Types de Taches:</label>
+              <input class="form-control1" type="text" id="categorie1" />
+              <label for="telephone1">Type de Paiement:</label>
+              <input class="form-control1" type="number" id="Paiement1" />
+              <button type="button" class="addContactButton1" id="ajouter1">
+                Ajouter
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
-    <script src="../Doc-js/taches.js"></script>
-</body>
-</html>
 
+
+    <script src="../Doc-js/taches.js"></script>
+  </body>
+</html>
