@@ -147,7 +147,8 @@ parsed.forEach(element => {
 
         const sbotton = document.createElement("button");
         sbotton.addEventListener("click", (e) => {
-          console.log("click");
+
+            console.log("click");
           const f = parsed.filter((el) => el.id !== element.id);
           console.log("f", f);
           localStorage.setItem("name", JSON.stringify(f));
