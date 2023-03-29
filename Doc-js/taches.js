@@ -40,7 +40,7 @@ function save() {
                 id: "",
                 nom: Taches.value,
                 Priorites: Priorites.value,
-                pourcentages: Pourcentage.value,
+               Materiel: Pourcentage.value,
                 Axe: Axe.value,
                 categorie: categorie.value,
                 paiement: Paiement.value,
@@ -81,6 +81,9 @@ function save() {
     Taches.focus();
   }
 }
+
+
+
 const tcorps = document.getElementById("tcorps");
 const mesTaches = localStorage.getItem("Taches");
 if (mesTaches) {
@@ -137,7 +140,6 @@ if (mesTaches) {
 
     const sbotton = document.createElement("button");
     sbotton.addEventListener("click", (e) => {
-      console.log("click");
       const f = parsed.filter((el) => el.id !== element.id);
       console.log("f", f);
       localStorage.setItem("Taches", JSON.stringify(f));
@@ -149,9 +151,16 @@ if (mesTaches) {
   });
 }
 
-document
-  .getElementById("affecte")
-  .addEventListener("click", function popup(event) {
+
+
+
+
+
+
+
+
+
+document.getElementById("affecte").addEventListener("click", function popup(event) {
     document.getElementById("contactezModal1").style.display = "block";
     document.querySelector(".close1").addEventListener("click", close);
 
@@ -159,3 +168,156 @@ document
       document.getElementById("contactezModal1").style.display = "none";
     }
   });
+
+// document.getElementById("ajouter1").addEventListener("click", egstr)
+// function egstr() {
+//     const Taches1 = document.getElementById("Taches1");
+//     const Personne = document.getElementById("Personne");
+//     const Materiel = document.getElementById("Materiel");
+//     const Description = document.getElementById("Description"); 
+//     const Durée = document.getElementById("Durée");
+//     const Paie = document.getElementById("Paie");
+
+//     if (Taches1.value != "" && Taches1.value.replaceAll(" ","") != "") {
+//         if (Personne.value != "" && Personne.value.replaceAll(" ","") != "") {
+//             if (Materiel.value != "" && Materiel.value.replaceAll(" ","") != "") {
+//                 if (Description.value != "" && Description.value.replaceAll(" ","") != "") {
+//                     if (Durée.value != "" && Durée.value.replaceAll(" ","") != "") {
+//                         if (Paie.value != "" && Paie.value.replaceAll(" ","") != "") {
+//                             const tab = [];
+//                             const donnerTaches = {
+//                                 id: "",
+//                                 Taches1: Taches1.value,
+//                                 Personne: Personne.value,
+//                                 Materiel: Materiel.value,
+//                                 Description: Description.value,
+//                                 Durée: Durée.value,
+//                                 Paie: Paie.value,
+//                             };
+
+//                             Taches1.value = "";
+//                             Personne.value = "";
+//                             Materiel.value = "";
+//                             Description.value = "";
+//                             Durée.value = "";
+//                             Paie.value = "";
+                            
+//                             if (!localStorage.getItem("Taches1")) {
+//                                 donnerTaches.id = "TA-1";
+//                                 tab.push(donnerTaches);
+//                                 localStorage.setItem("Taches1", JSON.stringify(tab));
+//                               } else {
+//                                 const ref = JSON.parse(localStorage.getItem("Taches1"));
+//                                 donnerTaches.id = "TA-" + (ref.length + 1);
+//                                 ref.push(donnerTaches);
+//                                 localStorage.setItem("Taches1", JSON.stringify(ref));
+//                               }
+
+//                         }else{
+//                             Paie.focus();
+//                         }
+//                     }else{
+//                         Durée.focus();
+//                     }
+//                 }else{
+//                     Description.focus();
+//                 }
+//             }else{
+//                 Materiel.focus();
+//             }
+//         }else{
+//             Personne.focus();
+//         }
+//     }else{
+//         Taches1.focus();
+//     }
+// }
+
+const corps = document.getElementById("tcorps");
+const meTaches = localStorage.getItem("Taches1");
+
+
+if(localStorage.name){
+    const select = document.getElementById("Personne");
+    JSON.parse(localStorage.name).forEach(cle => {
+        const option = document.createElement("option");
+        option.value = cle.name;
+        option.textContent = cle.name;
+        select.append(option);
+    })
+}
+
+
+
+
+
+
+document.getElementById("affectationTache").addEventListener("click", affecterTaches);
+function affecterTaches() {
+
+    
+const libelle = document.getElementById("Taches1");
+const Personne = document.getElementById("Personne");
+const Materiel = document.getElementById("Materiel");
+const Description = document.getElementById("Description");    
+const Duree = document.getElementById("Durée");
+const Paie = document.getElementById("Paie");
+
+
+  if (libelle.value != "" && libelle.value.replaceAll(" ", "") != "") {
+    if (Personne.value != "" && Personne.value.replaceAll(" ", "") != "") {
+      if ( Materiel.value != "" && Materiel.value.replaceAll(" ", "") != "") {
+        if (Description.value != "" && Description.value.replaceAll(" ", "") != "") {
+          if ( Duree.value != "" && Duree.value.replaceAll(" ", "") != "") {
+            if (Paie.value != "" && Paie.value.replaceAll(" ", "") != "") {
+              const tab = [];
+              const donneTaches = {
+                id: "",
+                libelle: libelle.value,
+                Personne: Personne.value,
+               Materiel: Materiel.value,
+                Description: Description.value,
+                Duree: Duree.value,
+                Paie: Paie.value,
+                statut : 1,
+              };
+              libelle.value = "";
+              Personne.value = "";
+              Materiel.value = "";
+              Description.value = "";
+              Duree.value = "";
+              Paie.value = "";
+
+              if (!localStorage.getItem("TACHES_AFFECTER")) {
+                donneTaches.id = "TAF-1";
+                tab.push(donneTaches);
+                localStorage.setItem("TACHES_AFFECTER", JSON.stringify(tab));
+              } else {
+                const ref = JSON.parse(localStorage.getItem("TACHES_AFFECTER"));
+                donneTaches.id = "TAF-" + (ref.length + 1);
+                ref.push(donneTaches);
+                localStorage.setItem("TACHES_AFFECTER", JSON.stringify(ref));
+              }
+            } else {
+              Paie.focus();
+            }
+          } else {
+            Duree.focus();
+          }
+        } else {
+          Description.focus();
+        }
+      } else {
+        Materiel.focus();
+      }
+    } else {
+      Personne.focus();
+    }
+  } else {
+    libelle.focus();
+  }
+}
+
+
+
+

@@ -1,12 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="../Doc-css/affecté.css" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="menu">
+      <div class="logo">
+        <img src="../Doc-image/main-verte (3).jpeg" alt="" />
+        <h1>RH <span>PLUS</span></h1>
+      </div>
+
+      <div class="item">
+        <li><i class="fa-solid fa-chart-pie"></i><a href="./dashboard.html">Tableau</a></li>
+        <li><i class="fa fa-users" aria-hidden="true"></i><a href="./personnel.html">Personnel</a></li>
+        <li><i class="fa fa-tachometer" aria-hidden="true"></i><a href="./taches.html">Taches</a></li>
+        <li><i class="fa fa-question-circle" aria-hidden="true"></i><a href="./affecté.html">Taches Affectés</a></li>
+        <li><i class="fa fa-file-text" aria-hidden="true"></i><a href="#">Bilan</a></li>
+        
+      </div>
+      <div class="barre"></div>
+      <div class="text"><p>PARAMETRES</p></div>
+      <div class="barre1"></div>
+      <div class="text"><p>DECONNEXION</p></div>
+    </section>
+
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div class="search">
+            <i class="far fa-search"></i>
+            <input type="text" placeholder="search" />
+          </div>
+        </div>
+        <div class="profil">
+          <i class="far fa-bell"></i>
+          <img src="../Doc-image/phto-profil (1).jpg" alt="" />
+        </div>
+      </div>
+
+      <h3 class="i-name">Les taches affectées</h3>
+
+      <div class="tablesection">
+        <table class="table">
+          <thead>
+            <th>ID</th>
+            <th>Taches a Faire</th>
+            <th>Personne a effectuées la tache</th>
+            <th>Description de la tache</th>
+            <th>Materiel fournis</th>
+            <th>Durée de la taches</th>
+            <th>Paie</th>
+            <th>Paie</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="tcorps"></tbody>
+        </table>
+      </div>
+
+      
+      
+    </section>
+
+
+    <script src="../Doc-js/affecterTaches.js"></script>
+  </body>
 </html>

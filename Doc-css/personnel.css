@@ -9,7 +9,7 @@ body{
 }
 
 #menu{
-    background: #363636;
+    background:  #111827;
     width: 240px;
     height: 100vh;
     
@@ -74,7 +74,7 @@ body{
 
 #interface{
     width: calc(100%-300px);
-   background: whitesmoke;
+ 
 }
 
 #interface .navigation{
@@ -84,7 +84,6 @@ body{
     background: white;
     padding: 15px 30px;
     border-bottom: 3px solid #008001;
-    background: #363636;
     width: 100%;
 }
 

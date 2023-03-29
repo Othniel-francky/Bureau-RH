@@ -33,11 +33,11 @@
         </li>
         <li>
           <i class="fa fa-tachometer" aria-hidden="true"></i
-          ><a href="#">Taches</a>
+          ><a href="./taches.html">Taches</a>
         </li>
         <li>
           <i class="fa fa-question-circle" aria-hidden="true"></i
-          ><a href="#">Taches Affectés</a>
+          ><a href="./affecté.html">Taches Affectés</a>
         </li>
         <li>
           <i class="fa fa-file-text" aria-hidden="true"></i
@@ -116,22 +116,33 @@
           <h1>AFFECTATION DE TACHES</h1>
           <span class="close1">&times;</span>
           <div class="form-container1">
-            <form method="post1">
-              <label for="name1">Taches:</label>
+            <form>
+              <label for="Taches1">Taches a Faire:</label>
               <input class="form-control1" type="text1" id="Taches1" />
-              <label for="email1">Priorités:</label>
-              <input class="form-control1" type="text1" id="Priorites1" />
-              <label for="telephone1">Pourcentage:</label>
-              <input class="form-control1" type="number" id="Pourcentage1" />
-              <label for="telephone1">Axe d'Amelioration:</label>
-              <input class="form-contro1" type="text" id="Axe1" />
-              <label for="telephone1">Types de Taches:</label>
-              <input class="form-control1" type="text" id="categorie1" />
-              <label for="telephone1">Type de Paiement:</label>
-              <input class="form-control1" type="number" id="Paiement1" />
-              <button type="button" class="addContactButton1" id="ajouter1">
-                Ajouter
+
+              <label for="Personne">Personne à effectuer la tache:</label>
+             <select id="Personne" class="form-control">
+                <option value="">Selectionnez un employé</option>
+             </select>
+
+              <label for="Materiel">Materiel fournis:</label>
+              <input class="form-control1" type="text" id="Materiel" />
+
+              <label for="Description">Description de la tache:</label>
+              <textarea name="" id="Description" cols="60" rows="10"></textarea>
+
+              <br><br>
+              <label for="Durée">Durée de la taches:</label>
+              <input class="form-control1" type="text" id="Durée" />
+
+              <label for="Paie">Paie:</label>
+              <input class="form-control1" type="text" id="Paie" />
+
+               <div class="bout">
+              <button type="button" class="addContactButton1" id="affectationTache">
+                Affecter
               </button>
+            </div>
             </form>
           </div>
         </div>
