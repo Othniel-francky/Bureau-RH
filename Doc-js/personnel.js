@@ -42,6 +42,7 @@ function save() {
                                     Email : Email.value,
                                     Date : Date.value,
                                     Adresse : Adresse.value,
+                                    statut:1,
                                 }
                                 name.value = "";
                                 Matricule.value  = "";
@@ -51,16 +52,17 @@ function save() {
                                 Date.value  = "";
                                 Adresse.value  = "";
 
-                                if(!localStorage.getItem('name')){
+                                if(!localStorage.getItem('PERSONNELS')){
                                     donneeTableau.id="N°-1"
                                     tab.push(donneeTableau);
-                                    localStorage.setItem("name",JSON.stringify(tab))
+                                    localStorage.setItem("PERSONNELS",JSON.stringify(tab))
                                 }else{
-                                    const ref = JSON.parse(localStorage.getItem("name"));
+                                    const ref = JSON.parse(localStorage.getItem("PERSONNELS"));
                                     donneeTableau.id="N°-"+(ref.length+1);
                                     ref.push(donneeTableau);
-                                    localStorage.setItem("name",JSON.stringify(ref));
+                                    localStorage.setItem("PERSONNELS",JSON.stringify(ref));
                                 }
+                                location.reload();
 
 
                             }else{
@@ -84,11 +86,9 @@ function save() {
     }else{
         name.focus()
     }
-  
-
-}  
+}
 const tcorps = document.getElementById("tcorps");
-const mesElements = localStorage.getItem("name");
+const mesElements = localStorage.getItem("PERSONNELS");
 if(mesElements){
     const parsed = JSON.parse(mesElements)
 parsed.forEach(element => {
@@ -147,11 +147,8 @@ parsed.forEach(element => {
 
         const sbotton = document.createElement("button");
         sbotton.addEventListener("click", (e) => {
-
-            console.log("click");
           const f = parsed.filter((el) => el.id !== element.id);
-          console.log("f", f);
-          localStorage.setItem("name", JSON.stringify(f));
+          localStorage.setItem("PERSONNELS", JSON.stringify(f));
           window.location.reload();
         });
         

@@ -11,14 +11,15 @@ document
     }
   });
 
-document.getElementById("ajouter").addEventListener("click", save);
-function save() {
+document.getElementById("ajouterTache").addEventListener("click", enregistrerTache);
+function enregistrerTache() {
   const Taches = document.getElementById("Taches");
   const Priorites = document.getElementById("Priorites");
   const Pourcentage = document.getElementById("Pourcentage");
   const Axe = document.getElementById("Axe");
-  const categorie = document.getElementById("categorie");
+  const Types = document.getElementById("types");
   const Paiement = document.getElementById("Paiement");
+  console.log(Taches)
 
   if (Taches.value != "" && Taches.value.replaceAll(" ", "") != "") {
     if (Priorites.value != "" && Priorites.value.replaceAll(" ", "") != "") {
@@ -28,8 +29,8 @@ function save() {
       ) {
         if (Axe.value != "" && Axe.value.replaceAll(" ", "") != "") {
           if (
-            categorie.value != "" &&
-            categorie.value.replaceAll(" ", "") != ""
+            Types.value != "" &&
+            Types.value.replaceAll(" ", "") != ""
           ) {
             if (
               Paiement.value != "" &&
@@ -38,35 +39,37 @@ function save() {
               const tab = [];
               const donneTaches = {
                 id: "",
-                nom: Taches.value,
+                libelle: Taches.value,
                 Priorites: Priorites.value,
                Materiel: Pourcentage.value,
                 Axe: Axe.value,
-                categorie: categorie.value,
+                Types: Types.value,
                 paiement: Paiement.value,
+                statut: 1,
               };
               Taches.value = "";
               Priorites.value = "";
               Pourcentage.value = "";
               Axe.value = "";
-              categorie.value = "";
+              Types.value = "";
               Paiement.value = "";
 
-              if (!localStorage.getItem("Taches")) {
+              if (!localStorage.getItem("TACHES")) {
                 donneTaches.id = "TA-1";
                 tab.push(donneTaches);
-                localStorage.setItem("Taches", JSON.stringify(tab));
+                localStorage.setItem("TACHES", JSON.stringify(tab));
               } else {
-                const ref = JSON.parse(localStorage.getItem("Taches"));
+                const ref = JSON.parse(localStorage.getItem("TACHES"));
                 donneTaches.id = "TA-" + (ref.length + 1);
                 ref.push(donneTaches);
-                localStorage.setItem("Taches", JSON.stringify(ref));
+                localStorage.setItem("TACHES", JSON.stringify(ref));
               }
+              location.reload()
             } else {
               Paiement.focus();
             }
           } else {
-            categorie.focus();
+            Types.focus();
           }
         } else {
           Axe.focus();
@@ -85,7 +88,7 @@ function save() {
 
 
 const tcorps = document.getElementById("tcorps");
-const mesTaches = localStorage.getItem("Taches");
+const mesTaches = localStorage.getItem("TACHES");
 if (mesTaches) {
   const parsed = JSON.parse(mesTaches);
   parsed.forEach((element) => {
@@ -100,7 +103,7 @@ if (mesTaches) {
 
     const tache = document.createElement("td");
     tache.id = "nom-" + element.id;
-    tache.textContent = element.nom;
+    tache.textContent = element.libelle;
     tr.append(tache);
 
     const prior = document.createElement("td");
@@ -119,10 +122,10 @@ if (mesTaches) {
     tr.append(ax);
 
     const typo = document.createElement("td");
-    typo.id = "categorie-" + element.id;
-    typo.textContent = element.categorie;
+    typo.id = "Types-" + element.id;
+    typo.textContent = element.Types;
     tr.append(typo);
-    console.log(element.categorie);
+    console.log(element.Types);
 
     const paye = document.createElement("td");
     paye.id = "paiement-" + element.id;
@@ -139,16 +142,15 @@ if (mesTaches) {
     colbotton.append(mbotton);
 
     const sbotton = document.createElement("button");
-    sbotton.addEventListener("click", (e) => {
-      const f = parsed.filter((el) => el.id !== element.id);
-      console.log("f", f);
-      localStorage.setItem("Taches", JSON.stringify(f));
-      window.location.reload();
-    });
     sbotton.id = "supprimer-" + element.id;
     sbotton.textContent = "Supprimer";
+    sbotton.addEventListener("click", suppression)
     colbotton.append(sbotton);
   });
+}
+
+function suppression(event){
+  const ID = event.target.id.replace("supprimer-", "");
 }
 
 
@@ -160,6 +162,14 @@ if (mesTaches) {
 
 
 
+
+
+
+
+
+
+
+//PARTIR AFFECTATION DE TACHES
 document.getElementById("affecte").addEventListener("click", function popup(event) {
     document.getElementById("contactezModal1").style.display = "block";
     document.querySelector(".close1").addEventListener("click", close);
@@ -169,77 +179,15 @@ document.getElementById("affecte").addEventListener("click", function popup(even
     }
   });
 
-// document.getElementById("ajouter1").addEventListener("click", egstr)
-// function egstr() {
-//     const Taches1 = document.getElementById("Taches1");
-//     const Personne = document.getElementById("Personne");
-//     const Materiel = document.getElementById("Materiel");
-//     const Description = document.getElementById("Description"); 
-//     const Durée = document.getElementById("Durée");
-//     const Paie = document.getElementById("Paie");
 
-//     if (Taches1.value != "" && Taches1.value.replaceAll(" ","") != "") {
-//         if (Personne.value != "" && Personne.value.replaceAll(" ","") != "") {
-//             if (Materiel.value != "" && Materiel.value.replaceAll(" ","") != "") {
-//                 if (Description.value != "" && Description.value.replaceAll(" ","") != "") {
-//                     if (Durée.value != "" && Durée.value.replaceAll(" ","") != "") {
-//                         if (Paie.value != "" && Paie.value.replaceAll(" ","") != "") {
-//                             const tab = [];
-//                             const donnerTaches = {
-//                                 id: "",
-//                                 Taches1: Taches1.value,
-//                                 Personne: Personne.value,
-//                                 Materiel: Materiel.value,
-//                                 Description: Description.value,
-//                                 Durée: Durée.value,
-//                                 Paie: Paie.value,
-//                             };
-
-//                             Taches1.value = "";
-//                             Personne.value = "";
-//                             Materiel.value = "";
-//                             Description.value = "";
-//                             Durée.value = "";
-//                             Paie.value = "";
-                            
-//                             if (!localStorage.getItem("Taches1")) {
-//                                 donnerTaches.id = "TA-1";
-//                                 tab.push(donnerTaches);
-//                                 localStorage.setItem("Taches1", JSON.stringify(tab));
-//                               } else {
-//                                 const ref = JSON.parse(localStorage.getItem("Taches1"));
-//                                 donnerTaches.id = "TA-" + (ref.length + 1);
-//                                 ref.push(donnerTaches);
-//                                 localStorage.setItem("Taches1", JSON.stringify(ref));
-//                               }
-
-//                         }else{
-//                             Paie.focus();
-//                         }
-//                     }else{
-//                         Durée.focus();
-//                     }
-//                 }else{
-//                     Description.focus();
-//                 }
-//             }else{
-//                 Materiel.focus();
-//             }
-//         }else{
-//             Personne.focus();
-//         }
-//     }else{
-//         Taches1.focus();
-//     }
-// }
 
 const corps = document.getElementById("tcorps");
 const meTaches = localStorage.getItem("Taches1");
 
-
-if(localStorage.name){
+//Pour charger les taches dans le formulaire
+if(localStorage.TACHES){
     const select = document.getElementById("Personne");
-    JSON.parse(localStorage.name).forEach(cle => {
+    JSON.parse(localStorage.PERSONNELS).filter(cle=>cle.statut != 0).forEach(cle => {
         const option = document.createElement("option");
         option.value = cle.name;
         option.textContent = cle.name;
@@ -254,16 +202,12 @@ if(localStorage.name){
 
 document.getElementById("affectationTache").addEventListener("click", affecterTaches);
 function affecterTaches() {
-
-    
-const libelle = document.getElementById("Taches1");
-const Personne = document.getElementById("Personne");
-const Materiel = document.getElementById("Materiel");
-const Description = document.getElementById("Description");    
-const Duree = document.getElementById("Durée");
-const Paie = document.getElementById("Paie");
-
-
+  const libelle = document.getElementById("Taches1");
+  const Personne = document.getElementById("Personne");
+  const Materiel = document.getElementById("Materiel");
+  const Description = document.getElementById("Description");    
+  const Duree = document.getElementById("Durée");
+  const Paie = document.getElementById("Paie");
   if (libelle.value != "" && libelle.value.replaceAll(" ", "") != "") {
     if (Personne.value != "" && Personne.value.replaceAll(" ", "") != "") {
       if ( Materiel.value != "" && Materiel.value.replaceAll(" ", "") != "") {
