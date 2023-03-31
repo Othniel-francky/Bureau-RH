@@ -15,7 +15,7 @@ button_login.onclick = (e) =>{
     } 
     else{
         if (Pass != Email ) {
-            swal("Connexion Reussie!", "You clicked the button!", "success");
+            swal("Connexion Reussie!", "cliquez sur le bouton", "success");
             window.location="dashboard.html"
         } else{
             swal("Opps..!", "Input field must be fill!", "error");
