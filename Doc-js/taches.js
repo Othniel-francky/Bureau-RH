@@ -1,8 +1,6 @@
 //document.querySelector('.addContactButton').addEventListener('click', )
 
-document
-  .getElementById("ajout")
-  .addEventListener("click", function popup(event) {
+document.getElementById("ajout").addEventListener("click", function popup(event) {
     document.getElementById("contactModal").style.display = "block";
     document.querySelector(".close").addEventListener("click", close);
 
@@ -137,21 +135,43 @@ if (mesTaches) {
     tr.append(colbotton);
 
     const mbotton = document.createElement("button");
+    mbotton.style.background= "blue";
+    mbotton.style.color="white";
+    mbotton.style.border="none";
+      mbotton.style.fontSize="20px";
     mbotton.id = "modifier-" + element.id;
     mbotton.textContent = "Modifier";
     colbotton.append(mbotton);
 
+
+    
     const sbotton = document.createElement("button");
+    sbotton.style.background="red";
+    sbotton.style.border="none";
+    sbotton.style.fontSize="20px";
+     sbotton.style.marginLeft="15px";
+    sbotton.style.color="white"
+    sbotton.addEventListener("click", (e) => {
+      const f = parsed.filter((el) => el.id !== element.id);
+      localStorage.setItem("TACHES", JSON.stringify(f));
+      window.location.reload();
+    })
+    
+    
+    
     sbotton.id = "supprimer-" + element.id;
     sbotton.textContent = "Supprimer";
-    sbotton.addEventListener("click", suppression)
     colbotton.append(sbotton);
   });
 }
 
-function suppression(event){
-  const ID = event.target.id.replace("supprimer-", "");
-}
+
+
+
+
+// function suppression(event){
+//   const ID = event.target.id.replace("supprimer-", "");
+// }
 
 
 

@@ -5,7 +5,7 @@
   }
   body {
     display: flex;
-    background: #444a53;
+    background: white;
   }
   
   #menu {
@@ -95,7 +95,7 @@
     justify-content: space-between;
     background: white;
     padding: 15px 30px;
-    border-bottom: 3px solid #594ef7;
+    border-bottom: 3px solid green;
   
     width: 100%;
   }
@@ -145,7 +145,7 @@
   }
   
   .i-name {
-    color: white;
+    color: black;
     padding: 30px 30px 0 30px;
     font-size: 24px;
     font-weight: 700;
@@ -159,7 +159,18 @@
     height: 650px;
     overflow: auto;
   }
-  
+  button{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+ }
+ button:nth-child(1){
+  color: white;
+  background-color: rgb(153, 209, 153);
+ }
+
   table {
     width: 100%;
     table-layout: fixed;
@@ -170,7 +181,7 @@
   thead th {
     position: sticky;
     top: 0;
-    background-color: green;
+    background-color: rgb(111, 235, 111);
     color: #1d1801;
     font-size: 18px;
     height: 50px;

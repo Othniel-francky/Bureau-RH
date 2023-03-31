@@ -54,8 +54,8 @@ if (mesTache) {
     tr.append(tdModif);
 
     const mbotton = document.createElement("button");
-    mbotton.id = "modifier-" + element.id;
-    mbotton.textContent = "Modifier";
+    mbotton.id = "finir-" + element.id;
+    mbotton.textContent = "finir";
     tdModif.append(mbotton);
 
     const tdSuppr = document.createElement("td");
@@ -63,6 +63,7 @@ if (mesTache) {
     tr.append(tdSuppr);
 
     const sbotton = document.createElement("button");
+    sbotton.style.background= "red"
     sbotton.addEventListener("click", supprimer);
     sbotton.id = "supprimer-" + element.id;
     sbotton.textContent = "Supprimer";
