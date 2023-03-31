@@ -138,7 +138,7 @@ if (mesTaches) {
     mbotton.style.background= "blue";
     mbotton.style.color="white";
     mbotton.style.border="none";
-      mbotton.style.fontSize="20px";
+      mbotton.style.fontSize="15px";
     mbotton.id = "modifier-" + element.id;
     mbotton.textContent = "Modifier";
     colbotton.append(mbotton);
@@ -148,7 +148,7 @@ if (mesTaches) {
     const sbotton = document.createElement("button");
     sbotton.style.background="red";
     sbotton.style.border="none";
-    sbotton.style.fontSize="20px";
+    sbotton.style.fontSize="15px";
      sbotton.style.marginLeft="15px";
     sbotton.style.color="white"
     sbotton.addEventListener("click", (e) => {
